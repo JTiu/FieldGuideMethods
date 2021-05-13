@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace FieldGuideMethods
 {
@@ -35,6 +32,12 @@ namespace FieldGuideMethods
             //var case5
             string phraseTyped = "";
 
+            //var case6
+            string g = "Harvard";
+            string h = "U Cinn Law";
+
+
+
             //method case1
             CountNumberLawyersToStaffOffice(numberOfOffices, lawyersPerOffice);
             Console.ReadLine();
@@ -54,14 +57,16 @@ namespace FieldGuideMethods
             ListFirstYearLawClasses(a, b, c, d, e, f);
 
             //method case5
-            ReversePhraseString(phraseTyped
-                );
+            ReversePhraseString(phraseTyped);
+
+            //method case6
+            CheckLawSchoolEquivalence(g, h);
 
 
         }
 
         //case1
-        public static void CountNumberLawyersToStaffOffice (int numberOfOffices, int lawyersPerOffice)
+        public static void CountNumberLawyersToStaffOffice(int numberOfOffices, int lawyersPerOffice)
         {
             Console.WriteLine($"County needs this many lawyers: {numberOfOffices * lawyersPerOffice}");
         }
@@ -78,7 +83,7 @@ namespace FieldGuideMethods
             Console.WriteLine($"{lastName}");
 
             Console.WriteLine($"{fullName}");
-            
+
         }
 
         //case4 building us a string.......
@@ -118,5 +123,17 @@ namespace FieldGuideMethods
             Console.ReadLine();
         }
 
+        //case6
+        public static void CheckLawSchoolEquivalence(string g, string h)
+        {
+            Console.WriteLine($"Are these two words equal: '{g}' and '{h}'?\t" + (g == h));
+
+            Console.ReadLine();
+        }
+
+        //Console.WriteLine("Are equal?\t" + (s2 == s3));
+        //Console.WriteLine("Are equal?\t" + (s2 == "a movie, "));
+        //Console.WriteLine("Are equal?\t" + s2.Equals("a mmmovie, "));
+        //Console.WriteLine("Are equal?\t" + s2.Equals("a movie, "));
     }
 }
