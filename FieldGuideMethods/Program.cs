@@ -9,6 +9,8 @@ namespace FieldGuideMethods
         {   //var case1
             int numberOfOffices = 7;
             int lawyersPerOffice = 2;
+            int numberOfCourthouseOffices = 22;
+
 
             //var case2
             int yearsToCompleteLawSchool = 3;
@@ -45,7 +47,16 @@ namespace FieldGuideMethods
 
 
             //method case1
-            CountNumberLawyersToStaffOffice(numberOfOffices, lawyersPerOffice);
+            CountNumberLawyersToStaffProsecutorsOffice(numberOfOffices, lawyersPerOffice);
+            Console.ReadLine();
+            Console.Clear();
+
+            int courtLegalStaff = CountNumberLawyersToStaffCourt(numberOfCourthouseOffices, lawyersPerOffice);
+            Console.WriteLine($"(From the Main method, return): the Court has {numberOfCourthouseOffices} offices, and needs {lawyersPerOffice} lawyers per office, a total of {courtLegalStaff}");
+            Console.ReadLine();
+            Console.Clear();
+
+            CountNumberLawyersToStaffCourt(numberOfOffices, lawyersPerOffice);
             Console.ReadLine();
             Console.Clear();
 
@@ -75,9 +86,15 @@ namespace FieldGuideMethods
         }
 
         //case1
-        public static void CountNumberLawyersToStaffOffice(int numberOfOffices, int lawyersPerOffice)
+        public static void CountNumberLawyersToStaffProsecutorsOffice(int numberOfOffices, int lawyersPerOffice)
         {
-            Console.WriteLine($"The County needs this many lawyers: {numberOfOffices * lawyersPerOffice}");
+            Console.WriteLine($"(Generated outside the Main method): The County needs this many prosecutors: {numberOfOffices * lawyersPerOffice}");
+        }
+
+        public static int CountNumberLawyersToStaffCourt(int numberOfCourthouseOffices, int lawyersPerOffice)
+        {
+            return numberOfCourthouseOffices * lawyersPerOffice;
+            
         }
 
         //case2
@@ -148,6 +165,7 @@ namespace FieldGuideMethods
             var s = String.Concat(k, m, n);
             Console.WriteLine(s);
             Console.ReadLine();
+            Console.Clear();
         }
 
     }
