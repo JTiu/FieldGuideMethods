@@ -35,6 +35,12 @@ namespace FieldGuideMethods
             //var case6
             string g = "Harvard";
             string h = "U Cinn Law";
+            string j = "Pitt";
+
+            //var case7
+            string k = "I could participate in the law school newspaper";
+            string m = "\n or law review";
+            string n = "\n or moot court";
 
 
 
@@ -60,7 +66,10 @@ namespace FieldGuideMethods
             ReversePhraseString(phraseTyped);
 
             //method case6
-            CheckLawSchoolEquivalence(g, h);
+            CheckLawSchoolEquivalence(g, h, j);
+
+            //method7
+            ConcatenateStringLawSchoolActivities(k, m, n);
 
 
         }
@@ -68,7 +77,7 @@ namespace FieldGuideMethods
         //case1
         public static void CountNumberLawyersToStaffOffice(int numberOfOffices, int lawyersPerOffice)
         {
-            Console.WriteLine($"County needs this many lawyers: {numberOfOffices * lawyersPerOffice}");
+            Console.WriteLine($"The County needs this many lawyers: {numberOfOffices * lawyersPerOffice}");
         }
 
         //case2
@@ -79,10 +88,9 @@ namespace FieldGuideMethods
         //case3
         public static void PrintNameLawSchoolInSequence(string firstName, string lastName, string fullName)
         {
-            Console.WriteLine($"{firstName}");
-            Console.WriteLine($"{lastName}");
-
-            Console.WriteLine($"{fullName}");
+            Console.WriteLine($"{firstName}\n");
+            Console.WriteLine($"{lastName}\n");
+            Console.WriteLine($"{fullName}\n" + $"");
 
         }
 
@@ -121,19 +129,26 @@ namespace FieldGuideMethods
             }
             Console.Write($"Reverse String is : {reverseString} ");
             Console.ReadLine();
+            Console.Clear();
         }
 
         //case6
-        public static void CheckLawSchoolEquivalence(string g, string h)
+        public static void CheckLawSchoolEquivalence(string g, string h, string j)
         {
-            Console.WriteLine($"Are these two words equal: '{g}' and '{h}'?\t" + (g == h));
+            Console.WriteLine($"Are these two words equal: '{g}' and '{h}'?:  \n" + (g == h));
+            Console.WriteLine($"\nAre equal? '{g}' and '{j}'?:  \n" + (g == j));
+            Console.WriteLine($"\nAre equal? '{h}' and 'U Cinn Law'?:  \n" + (h == "U Cinn Law"));
+            Console.ReadLine();
+            Console.Clear();
+        }
 
+        //method7
+        public static void ConcatenateStringLawSchoolActivities(string k, string m, string n)
+        {
+            var s = String.Concat(k, m, n);
+            Console.WriteLine(s);
             Console.ReadLine();
         }
 
-        //Console.WriteLine("Are equal?\t" + (s2 == s3));
-        //Console.WriteLine("Are equal?\t" + (s2 == "a movie, "));
-        //Console.WriteLine("Are equal?\t" + s2.Equals("a mmmovie, "));
-        //Console.WriteLine("Are equal?\t" + s2.Equals("a movie, "));
     }
 }
