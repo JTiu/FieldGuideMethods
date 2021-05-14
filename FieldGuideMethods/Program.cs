@@ -25,13 +25,16 @@ namespace FieldGuideMethods
             string fullName = firstName + " of " + lastName;
             string inCapsLawSchoolName;
 
-           //var case4
-           string a = "CivPro\n";
+            //var case4
+            string a = "CivPro\n";
             string b = "CrimLaw\n";
             string c = "Torts\n";
             string d = "Property\n";
             string e = "Contracts\n";
             string f = "Legal Research & Writing\n";
+            string contains_I_or_S;
+            string containsI = "i";
+            string containsS = "s";
 
             //var case5
             string phraseTyped = "";
@@ -58,7 +61,7 @@ namespace FieldGuideMethods
             Console.ReadLine();
             Console.Clear();
 
-            
+
 
             //method case2
             NumberOfDaysLawSchool(yearsToCompleteLawSchool, activeSchoolMonths, daysOfInstructionPerMonth);
@@ -84,6 +87,8 @@ namespace FieldGuideMethods
             //method case4
             ListFirstYearLawClasses(a, b, c, d, e, f);
 
+           contains_I_or_S = Check_I_Or_S_FirstYearLawClasses(a, b, c, d, e, f); 
+
             //method case5
             ReversePhraseString(phraseTyped);
 
@@ -92,8 +97,6 @@ namespace FieldGuideMethods
 
             //method7
             ConcatenateStringLawSchoolActivities(k, m, n);
-
-
         }
 
         //case1
@@ -105,7 +108,6 @@ namespace FieldGuideMethods
         public static int CountNumberLawyersToStaffCourt(int numberOfCourthouseOffices, int lawyersPerOffice)
         {
             return numberOfCourthouseOffices * lawyersPerOffice;
-            
         }
 
         //case2
@@ -117,13 +119,12 @@ namespace FieldGuideMethods
         public static int NumberOfActiveMonthsLawSchool(int yearsToCompleteLawSchool, int activeSchoolMonths)
         {
             return activeSchoolMonths * yearsToCompleteLawSchool;
-           
         }
 
         //case3
         public static void PrintNameLawSchoolInSequence(string firstName, string lastName, string fullName)
         {
-            Console.WriteLine($"(Generated outside the Main method): {firstName}\n");
+            Console.WriteLine($"(Generated outside the Main method):\n\n{firstName}\n");
             Console.WriteLine($"{lastName}\n");
             Console.WriteLine($"{fullName}\n" + $"");
         }
@@ -132,8 +133,6 @@ namespace FieldGuideMethods
         {
             return fullName.ToUpper();
         }
-
-
 
         //case4 building us a string.......
         public static void ListFirstYearLawClasses(string a, string b, string c, string d, string e, string f)
@@ -153,11 +152,15 @@ namespace FieldGuideMethods
             builder.Append(f);
 
             string result = builder.ToString();
-            Console.WriteLine(result);
+            Console.WriteLine($"(Generated outside the Main method): {result}");
             Console.ReadLine();
             Console.Clear();
         }
 
+        public static string Check_I_Or_S_FirstYearLawClasses(string a, string b, string c, string d, string e, string f)
+        {
+            return (a.Contains());
+        }
         //case5
         public static void ReversePhraseString(string stringTyped)
         {
