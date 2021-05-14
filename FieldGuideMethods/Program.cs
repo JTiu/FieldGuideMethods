@@ -11,7 +11,6 @@ namespace FieldGuideMethods
             int lawyersPerOffice = 2;
             int numberOfCourthouseOffices = 22;
 
-
             //var case2
             int yearsToCompleteLawSchool = 3;
             int activeSchoolMonths = 8;
@@ -32,9 +31,7 @@ namespace FieldGuideMethods
             string d = "Property\n";
             string e = "Contracts\n";
             string f = "Legal Research & Writing\n";
-            string contains_I_or_S;
-            string containsI = "i";
-            string containsS = "s";
+            string stringAppend;
 
             //var case5
             string phraseTyped = "";
@@ -83,11 +80,13 @@ namespace FieldGuideMethods
             Console.ReadLine();
             Console.Clear();
 
-
             //method case4
             ListFirstYearLawClasses(a, b, c, d, e, f);
 
-           contains_I_or_S = Check_I_Or_S_FirstYearLawClasses(a, b, c, d, e, f); 
+            stringAppend = AppendFirstYearClassesInMainReversed(a, b, c, d, e, f);
+            Console.WriteLine($"(From the Main method, return): append first year subjects:\n{stringAppend}");
+            Console.ReadLine();
+            Console.Clear();
 
             //method case5
             ReversePhraseString(phraseTyped);
@@ -134,7 +133,7 @@ namespace FieldGuideMethods
             return fullName.ToUpper();
         }
 
-        //case4 building us a string.......
+        //case4 building a string.......
         public static void ListFirstYearLawClasses(string a, string b, string c, string d, string e, string f)
         {
             StringBuilder builder = new StringBuilder();
@@ -152,19 +151,33 @@ namespace FieldGuideMethods
             builder.Append(f);
 
             string result = builder.ToString();
-            Console.WriteLine($"(Generated outside the Main method): {result}");
+            Console.WriteLine($"(Generated outside the Main method):\n{result}");
             Console.ReadLine();
-            Console.Clear();
+            
         }
+        public static string AppendFirstYearClassesInMainReversed(string a, string b, string c, string d, string e, string f)
 
-        public static string Check_I_Or_S_FirstYearLawClasses(string a, string b, string c, string d, string e, string f)
         {
-            return (a.Contains());
+            StringBuilder builder = new StringBuilder();
+            builder.Append("1: ");
+            builder.Append(f);
+            builder.Append("2: ");
+            builder.Append(e);
+            builder.Append("3: ");
+            builder.Append(d);
+            builder.Append("4: ");
+            builder.Append(c);
+            builder.Append("5: ");
+            builder.Append(b);
+            builder.Append("6: ");
+            builder.Append(a);
+            return builder.ToString();
         }
+          
         //case5
         public static void ReversePhraseString(string stringTyped)
         {
-            Console.Write("Enter a String : ");
+            Console.Write("Generated outside the Main method): Enter a String : ");
             string originalString = Console.ReadLine();
             string reverseString = string.Empty;
             for (int i = originalString.Length - 1; i >= 0; i--)
