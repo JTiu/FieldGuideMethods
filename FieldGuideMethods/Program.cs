@@ -16,15 +16,17 @@ namespace FieldGuideMethods
             int yearsToCompleteLawSchool = 3;
             int activeSchoolMonths = 8;
             int daysOfInstructionPerMonth = 20;
+            int activeMonthsLawSchool;
 
             //var case3
 
             string firstName = "University";
             string lastName = "Cincinnati";
             string fullName = firstName + " of " + lastName;
+            string inCapsLawSchoolName;
 
-            //var case4
-            string a = "CivPro\n";
+           //var case4
+           string a = "CivPro\n";
             string b = "CrimLaw\n";
             string c = "Torts\n";
             string d = "Property\n";
@@ -40,7 +42,7 @@ namespace FieldGuideMethods
             string j = "Pitt";
 
             //var case7
-            string k = "I could participate in the law school newspaper";
+            string k = "\nI could participate in the law school newspaper";
             string m = "\n or law review";
             string n = "\n or moot court";
 
@@ -56,12 +58,15 @@ namespace FieldGuideMethods
             Console.ReadLine();
             Console.Clear();
 
-            CountNumberLawyersToStaffCourt(numberOfOffices, lawyersPerOffice);
-            Console.ReadLine();
-            Console.Clear();
+            
 
             //method case2
             NumberOfDaysLawSchool(yearsToCompleteLawSchool, activeSchoolMonths, daysOfInstructionPerMonth);
+            Console.ReadLine();
+            Console.Clear();
+
+            activeMonthsLawSchool = NumberOfActiveMonthsLawSchool(yearsToCompleteLawSchool, activeSchoolMonths);
+            Console.WriteLine($"(From the Main method, return): This many months to complete law school: {activeMonthsLawSchool}");
             Console.ReadLine();
             Console.Clear();
 
@@ -69,6 +74,12 @@ namespace FieldGuideMethods
             PrintNameLawSchoolInSequence(firstName, lastName, fullName);
             Console.ReadLine();
             Console.Clear();
+
+            inCapsLawSchoolName = PrintNameLawSchoolInCaps(fullName);
+            Console.WriteLine($"(From the Main method, return): law school, in caps: {inCapsLawSchoolName}");
+            Console.ReadLine();
+            Console.Clear();
+
 
             //method case4
             ListFirstYearLawClasses(a, b, c, d, e, f);
@@ -100,16 +111,29 @@ namespace FieldGuideMethods
         //case2
         public static void NumberOfDaysLawSchool(int yearsToCompleteLawSchool, int activeSchoolMonths, int daysOfInstructionPerMonth)
         {
-            Console.WriteLine($"I spent these many days in law school: {yearsToCompleteLawSchool * activeSchoolMonths * daysOfInstructionPerMonth}");
+            Console.WriteLine($"(Generated outside the Main method): I spent these many days in law school: {yearsToCompleteLawSchool * activeSchoolMonths * daysOfInstructionPerMonth}");
         }
+
+        public static int NumberOfActiveMonthsLawSchool(int yearsToCompleteLawSchool, int activeSchoolMonths)
+        {
+            return activeSchoolMonths * yearsToCompleteLawSchool;
+           
+        }
+
         //case3
         public static void PrintNameLawSchoolInSequence(string firstName, string lastName, string fullName)
         {
-            Console.WriteLine($"{firstName}\n");
+            Console.WriteLine($"(Generated outside the Main method): {firstName}\n");
             Console.WriteLine($"{lastName}\n");
             Console.WriteLine($"{fullName}\n" + $"");
-
         }
+        public static string PrintNameLawSchoolInCaps(string fullName)
+
+        {
+            return fullName.ToUpper();
+        }
+
+
 
         //case4 building us a string.......
         public static void ListFirstYearLawClasses(string a, string b, string c, string d, string e, string f)
